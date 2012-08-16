@@ -1,2 +1,4 @@
 rca:
     description: Permissions
+aspect:
+  rca: Permissions

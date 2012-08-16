@@ -1,2 +1,4 @@
 rca:
     description: Permissos
+aspect:
+  rca: Permissos
