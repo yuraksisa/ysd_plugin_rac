@@ -13,7 +13,7 @@ module Huasi
     #
     # Renders the tab
     #
-    def element_form_tab(context={})
+    def element_form_tab(context={}, aspect_model)
       app = context[:app]
       info = element_info(context)
       render_tab("#{info[:id]}_form", info[:description])
@@ -22,7 +22,7 @@ module Huasi
     #
     # Add fields to edit the photo information in the content form
     #
-    def element_form(context={})
+    def element_form(context={}, aspect_model)
       
       app = context[:app]
       
@@ -34,7 +34,7 @@ module Huasi
     #
     # Support to edit the photo information in the content form
     #
-    def element_form_extension(context={})
+    def element_form_extension(context={}, aspect_model)
     
       app = context[:app]
     
@@ -46,7 +46,7 @@ module Huasi
     #
     # Renders the tab
     #
-    def element_template_tab(context={})
+    def element_template_tab(context={}, aspect_model)
       app = context[:app]
       info = element_info(context)
       render_tab("#{info[:id]}_template", info[:description])
@@ -55,7 +55,7 @@ module Huasi
     #
     # Show the element
     #
-    def element_template(context={})
+    def element_template(context={}, aspect_model)
     
        app = context[:app]
     
