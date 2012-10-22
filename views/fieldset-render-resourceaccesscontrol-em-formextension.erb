@@ -1,0 +1,53 @@
+<script type="text/javascript">
+
+/* ------------------------------------------------
+   Plugin for ResourceAccessControl
+   ------------------------------------------------ */
+ResourceAccessControlEntityHookPlugin = function() {
+	
+  this.onEdit = function(entity) { /* On Edit the entity */
+  	this.configForm(entity);
+  };
+  
+  this.onNew = function() {
+  	$('#permission_owner').val('<%= user.username unless defined?(user) %>');
+    this.configForm(null);	
+  };  	
+	
+  // -------- Support ----------------
+  	
+  this.configForm = function(entity) {
+
+    var dataSource = new YsdForms.RemoteDataSource('/usergroups',{id:'group', description:'name'});
+    var value = (entity&&entity.permission_group)?entity.permission_group:null; 
+    var selector = new YsdForms.SelectSelector('permission_group', dataSource, value );
+
+    var permissionsData = [{id:0, description:'None'},
+                           {id:2, description:'Read'}, 
+                           {id:4, description:'Write'},
+                           {id:6, description:'Read/Write'}];
+    var permissionsDataSource = new YsdForms.MemoryDataSource(permissionsData);
+    
+    var permissionsOwner = (entity && entity.permission_modifier_owner)?entity.permission_modifier_owner:6;
+    var selectPermissionsOwner = new YsdForms.SelectSelector('permission_modifier_owner', permissionsDataSource, permissionsOwner);  	
+
+    var permissionsGroup = (entity && entity.permission_modifier_group)?entity.permission_modifier_group:2;
+    var selectPermissionsGroup = new YsdForms.SelectSelector('permission_modifier_group', permissionsDataSource, permissionsGroup);  	
+
+    var permissionsAll = (entity && entity.permission_modifier_all)?entity.permission_modifier_all:2;
+    var selectPermissionsAll = new YsdForms.SelectSelector('permission_modifier_all', permissionsDataSource, permissionsAll);  	
+  	
+  	
+  };
+  
+}
+
+if (typeof YSD.entityManagement.complementHooks != 'undefined') {
+	
+  var pluginResourceAccessControl = new ResourceAccessControlEntityHookPlugin();
+    
+  YSD.entityManagement.complementHooks.register(pluginResourceAccessControl);	
+	
+}
+
+</script>

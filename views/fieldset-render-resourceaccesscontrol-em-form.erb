@@ -1,0 +1,27 @@
+        <div id="rca_form">
+          <div class="formrow">
+            <label for="permission_owner" class="fieldtitle">Owner</label>
+            <input type="text" maxlength="32" id="permission_owner" name="permission_owner" class="fieldcontrol" <%% if (entity) { %> value="<%%= entity.permission_owner %>" <%% } %> />
+            <div class="fielddescription">The owner of the resource</div>
+          </div>
+          <div class="formrow">
+            <label for="permission_group" class="fieldtitle">Group</label>
+            <select id="permission_group" name="permission_group" class="fieldcontrol"/>
+            <div class="fielddescription">The group to which the resource belongs to</div>
+          </div>
+          <div class="formrow">
+            <label for="permission_modifier_owner" class="fieldtitle">Owner permissions</label>
+            <select id="permission_modifier_owner" name="permission_modifier_owner" class="fieldcontrol"/>
+            <div class="fielddescription">The owner permissions</div>
+          </div>
+          <div class="formrow">
+            <label for="permission_modifier_group" class="fieldtitle">Group permissions</label>
+            <select id="permission_modifier_group" name="permission_modifier_group" class="fieldcontrol"/>
+            <div class="fielddescription">The group members permissions</div>
+          </div>          
+          <div class="formrow">
+            <label for="permission_modifier_all" class="fieldtitle">Everybody permissions</label>
+            <select id="permission_modifier_all" name="permission_modifier_all" class="fieldcontrol"/>
+            <div class="fielddescription">Everybody permissions</div>
+          </div>                    
+        </div>   

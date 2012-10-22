@@ -26,7 +26,7 @@ module Huasi
       
       app = context[:app]
       
-      renderer = UIFieldSetRender::FieldSetRender.new('resourceaccesscontrol', app)      
+      renderer = UI::FieldSetRender.new('resourceaccesscontrol', app)      
       contact_form = renderer.render('form', 'em')    
       
     end
@@ -38,7 +38,7 @@ module Huasi
     
       app = context[:app]
     
-      renderer = UIFieldSetRender::FieldSetRender.new('resourceaccesscontrol', app)      
+      renderer = UI::FieldSetRender.new('resourceaccesscontrol', app)      
       contact_form_extension = renderer.render('formextension', 'em')
               
     end
@@ -59,7 +59,7 @@ module Huasi
     
        app = context[:app]
     
-       renderer = UIFieldSetRender::FieldSetRender.new('resourceaccesscontrol', app)      
+       renderer = UI::FieldSetRender.new('resourceaccesscontrol', app)      
        contact_template = renderer.render('view', 'em')
                 
     end
