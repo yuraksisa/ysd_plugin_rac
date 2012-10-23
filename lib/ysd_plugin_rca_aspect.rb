@@ -1,3 +1,5 @@
+require 'renders/ysd_ui_fieldset_render' unless defined?UI::FieldSetRender
+
 module Huasi
   class RCAAspectDelegate
     include ContentManagerSystem::Support
@@ -26,7 +28,7 @@ module Huasi
       
       app = context[:app]
       
-      renderer = UI::FieldSetRender.new('resourceaccesscontrol', app)      
+      renderer = ::UI::FieldSetRender.new('resourceaccesscontrol', app)      
       contact_form = renderer.render('form', 'em')    
       
     end
@@ -38,7 +40,7 @@ module Huasi
     
       app = context[:app]
     
-      renderer = UI::FieldSetRender.new('resourceaccesscontrol', app)      
+      renderer = ::UI::FieldSetRender.new('resourceaccesscontrol', app)      
       contact_form_extension = renderer.render('formextension', 'em')
               
     end
@@ -59,7 +61,7 @@ module Huasi
     
        app = context[:app]
     
-       renderer = UI::FieldSetRender.new('resourceaccesscontrol', app)      
+       renderer = ::UI::FieldSetRender.new('resourceaccesscontrol', app)      
        contact_template = renderer.render('view', 'em')
                 
     end
