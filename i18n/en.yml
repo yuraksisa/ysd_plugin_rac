@@ -2,3 +2,24 @@ rca:
     description: Permissions
 aspect:
   rca: Permissions
+#
+# Gui block
+#
+guiblock:
+  resource_access_control:
+    form:
+      owner:
+        label: Owner
+        description: The owner of the resource
+      group:
+        label: Group
+        description: The group to which the resource belongs to
+      owner_permissions:
+        label: Owner permissions
+        description: The owner permissions
+      group_permissions:
+        label: Group permissions
+        description: The group members permissions
+      everybody_permissions:
+        label: Everybody permissions
+        description: Everybody permissions    

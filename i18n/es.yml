@@ -1,4 +1,25 @@
 rca:
-    description: Permisos
+  description: Permisos
 aspect:
   rca: Permisos
+#
+# Gui block
+#
+guiblock:
+  resource_access_control:
+    form:
+      owner:
+        label: Propietario
+        description: El propietario del recurso
+      group:
+        label: Grupo
+        description: El grupo al que pertenece el recurso
+      owner_permissions:
+        label: Permisos del propietario
+        description: Los permisos de acceso del propietario
+      group_permissions:
+        label: Permisos del grupo
+        description: Los permisos de acceso del grupo
+      everybody_permissions:
+        label: Permisos del resto de usuarios
+        description: Los permisos de acceso del resto de usuarios   

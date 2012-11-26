@@ -2,3 +2,24 @@ rca:
     description: Permissos
 aspect:
   rca: Permissos
+#
+# Gui block
+#
+guiblock:
+  resource_access_control:
+    form:
+      owner:
+        label: Propietari
+        description: El propietari del recurs
+      group:
+        label: Grup
+        description: El grup al que pertany el recurs
+      owner_permissions:
+        label: Accès del propietari
+        description: Quin tipus d\'accès té el propietari
+      group_permissions:
+        label: Permisos del grup
+        description: Quin tipus d\'accès tenen els membres del grup
+      everybody_permissions:
+        label: Permisos de la resta d\'usuaris
+        description: Quin tipus d\'accès tenen la resta d\'usuaris   
