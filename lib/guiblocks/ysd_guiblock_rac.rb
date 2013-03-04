@@ -51,7 +51,7 @@ module GuiBlock
     def element_form_tab(context={}, aspect_model)
       app = context[:app]
       
-      if resource.can_write?(app.user) and (not app.user.belongs_to?('anonymous'))
+      if resource.can_write?(app.user) and (not app.user.belongs_to?(Users::Group.get('anonymous')))
         info = element_info(context)
         app.render_tab("#{info[:id]}_form", info[:description])        
       else
@@ -67,7 +67,7 @@ module GuiBlock
       
       app = context[:app]
 
-      if resource.can_write?(app.user) and (not app.user.belongs_to?('anonymous'))
+      if resource.can_write?(app.user) and (not app.user.belongs_to?(Users::Group.get('anonymous')))
         renderer = ::UI::FieldSetRender.new('resourceaccesscontrol', app)      
         renderer.render('form', 'em') 
       else      
@@ -83,7 +83,7 @@ module GuiBlock
     
       app = context[:app]
 
-      if resource.can_write?(app.user) and (not app.user.belongs_to?('anonymous'))
+      if resource.can_write?(app.user) and (not app.user.belongs_to?(Users::Group.get('anonymous')))
         renderer = ::UI::FieldSetRender.new('resourceaccesscontrol', app)      
         renderer.render('formextension', 'em')      
       else       
@@ -99,7 +99,7 @@ module GuiBlock
       
       app = context[:app]
 
-      if resource.can_write?(app.user) and (not app.user.belongs_to?('anonymous'))
+      if resource.can_write?(app.user) and (not app.user.belongs_to?(Users::Group.get('anonymous')))
         info = element_info(context)
         app.render_tab("#{info[:id]}_template", info[:description])
       else
@@ -115,7 +115,7 @@ module GuiBlock
     
        app = context[:app]
        
-       if resource.can_write?(app.user) and (not app.user.belongs_to?('anonymous'))
+       if resource.can_write?(app.user) and (not app.user.belongs_to?(Users::Group.get('anonymous')))
          renderer = ::UI::FieldSetRender.new('resourceaccesscontrol', app)      
          contact_template = renderer.render('view', 'em')
        else       
