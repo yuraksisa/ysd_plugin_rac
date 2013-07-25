@@ -30,16 +30,15 @@ require(['jquery', 'YSDRemoteDataSource', 'YSDSelectSelector', 'YSDMemoryDataSou
                            {id:4, description:'Write'},
                            {id:6, description:'Read/Write'}];
       var permissionsDataSource = new MemoryDataSource(permissionsData);
-    
-      var permissionsOwner = (entity && entity.permission_modifier_owner)?entity.permission_modifier_owner:6;
-      var selectPermissionsOwner = new SelectSelector('permission_modifier_owner', permissionsDataSource, permissionsOwner);  	
+      
+      var permissionsOwner = (entity && typeof entity.permission_modifier_owner != 'undefined')?entity.permission_modifier_owner:6;
+      var selectPermissionsOwner = new SelectSelector('permission_modifier_owner', permissionsDataSource, permissionsOwner);    
 
-      var permissionsGroup = (entity && entity.permission_modifier_group)?entity.permission_modifier_group:2;
-      var selectPermissionsGroup = new SelectSelector('permission_modifier_group', permissionsDataSource, permissionsGroup);  	
+      var permissionsGroup = (entity && typeof entity.permission_modifier_group != 'undefined')?entity.permission_modifier_group:2;
+      var selectPermissionsGroup = new SelectSelector('permission_modifier_group', permissionsDataSource, permissionsGroup);    
 
-      var permissionsAll = (entity && entity.permission_modifier_all)?entity.permission_modifier_all:2;
-      var selectPermissionsAll = new SelectSelector('permission_modifier_all', permissionsDataSource, permissionsAll);  	
-  	 	
+      var permissionsAll = (entity && typeof entity.permission_modifier_all != 'undefined')?entity.permission_modifier_all:2;
+      var selectPermissionsAll = new SelectSelector('permission_modifier_all', permissionsDataSource, permissionsAll);   	 	
     };
   
   }
