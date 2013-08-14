@@ -21,7 +21,7 @@ require(['jquery', 'YSDRemoteDataSource', 'YSDSelectSelector', 'YSDMemoryDataSou
   	
     this.configForm = function(entity) {
 
-      var dataSource = new RemoteDataSource('/usergroups',{id:'group', description:'name'});
+      var dataSource = new RemoteDataSource('/api/usergroups',{id:'group', description:'name'});
       var value = (entity&&entity.permission_group)?entity.permission_group:null; 
       var selector = new SelectSelector('permission_group', dataSource, value );
 
